@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Example 02</h1>
+
+<p>num_01: {{num_01}}</p>
+<p>abc: {{abc}}</p>
+<p>category: {{category}}</p>
+
+<table class="table table-bordered border-success table-striped text-center">
+    <tr>
+        <th>Name</td>
+        <th>Description</td>
+    </tr>
+
+    {% for item in category%}
+
+    <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+<br>
+
+{% if isClicked == 1 %}
+<button class="btn btn-outline-success btn-lg">ABC</button>
+
+{% elif isClicked == 0 %}
+<button class="btn btn-outline-success btn-lg disabled">ABC</button>
+
+{% endif %}
+
+<p>After Button</p>
+
+{% endblock %}
